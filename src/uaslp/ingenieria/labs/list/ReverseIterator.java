@@ -6,11 +6,11 @@ package uaslp.ingenieria.labs.list;
 public class ReverseIterator {
     private Node currentNode;
 
-    public ReverseIterator(Node currentNode) {
+    ReverseIterator(Node currentNode) {
         this.currentNode = currentNode;
     }
 
-    public ReverseIterator(ReverseIterator reverseIterator){
+    ReverseIterator(ReverseIterator reverseIterator){
         currentNode=reverseIterator.currentNode;
     }
 

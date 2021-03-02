@@ -5,8 +5,23 @@ package uaslp.ingenieria.labs.list;
  */
 public class LinkedList {
 
-    public static final int BEFORE = 0;
-    public static final int AFTER = 1;
+    //public static final int BEFORE = 0;
+    //public static final int AFTER = 1;
+
+    public enum beforeorafter{
+        before,after;
+
+        private int BEFORE=0;
+        private int AFTER=1;
+
+        public int getBEFORE(){
+            return BEFORE;
+        }
+
+        public int getAFTER() {
+            return AFTER;
+        }
+    }
 
     private Node head;
     private Node tail;
@@ -95,7 +110,7 @@ public class LinkedList {
         Node newNode = new Node(data);
         Node currentNode = it.getCurrentNode();
 
-        if (position == AFTER) {
+        if (position == beforeorafter.after.getAFTER()) {
             newNode.setNext(currentNode.getNext());
             newNode.setPrevious(currentNode);
             currentNode.setNext(newNode);
@@ -104,7 +119,7 @@ public class LinkedList {
             } else {
                 tail = newNode;
             }
-        } else if (position == BEFORE) {
+        } else if (position == beforeorafter.before.getBEFORE()) {
             newNode.setPrevious(currentNode.getPrevious());
             newNode.setNext(currentNode);
             currentNode.setPrevious(newNode);
